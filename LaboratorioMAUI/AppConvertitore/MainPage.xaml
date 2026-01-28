@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppConvertitore.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="80,0"
+            Spacing="50">
+            <!-- HorizontalOptions="Center"-->
+            
+            <Label/>
+            <Label/>
+            <Label/>
+            <Label
+                Text="Convertitore Franchi - Euro"
+                Style="{StaticResource Headline}" />
+            
+            <Entry x:Name="entImporto"
+                Placeholder="Inserisci importo in CHF"
+                Keyboard="Numeric"/>
+
+            <Button
+                x:Name="btnConvertire"
+                Text="Converti in €" 
+                Clicked="btnConverti_Clicked"/>
+
+            <Label
+                x:Name="lblRisultato"
+                Text="Importo: --"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.Description="Risultato del importo in euro" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

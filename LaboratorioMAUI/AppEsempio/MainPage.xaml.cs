@@ -32,6 +32,11 @@
             SemanticScreenReader.Announce(CounterBtnx10.Text);
 
         }
+        private void OnToggleImageClicked(object sender, EventArgs e)
+        {
+            Marucca.IsVisible = !Marucca.IsVisible;
+        }
+
     }
 
 }

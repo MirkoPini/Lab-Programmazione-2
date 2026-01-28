@@ -14,12 +14,12 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label
-                Text="Hello, World!"
+                Text="Welcome to the Microsoft Support"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Text="How can I help you today"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
@@ -37,7 +37,15 @@
                 SemanticProperties.Hint="Counts the number of times you click X10"
                 Clicked="OnCounterClickedX10"
                 HorizontalOptions="Fill" />
+            <Button
+                x:Name="Show"
+                Text="Show/Hidden"
+                Style="{StaticResource x10}"
+                SemanticProperties.Hint="Show/Hidden Marucca"
+                Clicked="OnToggleImageClicked"
+                HorizontalOptions="Fill" />
             <Image
+                x:Name="Marucca"
                 Source="f1.jpg"
                 HeightRequest="185"
                 Aspect="AspectFit"
