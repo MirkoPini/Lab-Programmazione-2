@@ -48,7 +48,9 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
+
     <Style TargetType="Button" x:Key="x10">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource Magenta}}" />
         <Setter Property="FontSize" Value="20"/>
     </Style>
 
