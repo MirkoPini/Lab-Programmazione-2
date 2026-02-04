@@ -36,7 +36,6 @@
         {
             Marucca.IsVisible = !Marucca.IsVisible;
         }
-
     }
 
 }

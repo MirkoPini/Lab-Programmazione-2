@@ -30,7 +30,10 @@
                 Text="Importo: --"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.Description="Risultato del importo in euro" />
-            
+            <Button
+                x:Name="btnReset"
+                Text="Pulisci"
+                Clicked="btnPulisci_Clicked"/>
         </VerticalStackLayout>
     </ScrollView>
 
