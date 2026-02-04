@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Equation.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Risolutore Equazioni" Style="{StaticResource Headline}" />
+            <Label Text="Data l'equazione: ax² + bx + c = 0" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Label/>
+            <Label/>
+            <Label/>
+            <Grid ColumnDefinitions="100, *" RowDefinitions="Auto, Auto, Auto" ColumnSpacing="15" RowSpacing="15">
+                <Label x:Name="CoefficenteA" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Coefficente A:" VerticalOptions="Center"/>
+                <Entry x:Name="entCoeffA" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Placeholder="Inserisci a" Keyboard="Numeric"/>
+                <Label x:Name="CoefficenteB" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="Coefficente B:" VerticalOptions="Center"/>
+                <Entry x:Name="entCoeffB" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Inserisci b" Keyboard="Numeric"/>
+                <Label x:Name="CoefficenteC" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Text="Coefficente C:" VerticalOptions="Center"/>
+                <Entry x:Name="entCoeffC" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Placeholder="Inserisci c" Keyboard="Numeric"/>
+            </Grid>
+            <Label/>
+            <Button
+                x:Name="btnCalcola"
+                Text="Calcola Radici"
+                Clicked="btnCalcola_Clicked"/>
+            <Label/>
+            <Label x:Name="lblResult" Text="Inserisci i valori per iniziare" HorizontalTextAlignment="Center" BackgroundColor="Gray"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
