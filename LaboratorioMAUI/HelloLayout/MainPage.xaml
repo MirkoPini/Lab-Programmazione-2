@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloLayout.MainPage">
+
+    <ScrollView>
+
+        <!--<VerticalStackLayout Margin="20">
+            <Button Text="B1" Margin="15"/>
+            <Button Text="B2" Margin="15"/>
+            <Button Text="B3" Margin="15"/>
+            <Button Text="B4" Margin="15"/>
+            <Button Text="B5" Margin="15"/>
+            <HorizontalStackLayout>
+                <Button Text="B5" Margin="15"/>
+                <Button Text="B5" Margin="15"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <!--Contenuto-->
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Padding="10">
+                <Button Text="A1" Margin="1"/>
+                <Button Text="A2" Margin="1"/>
+                <Button Text="A3" Margin="1"/>
+                <Button Text="A4" Margin="1"/>
+            </VerticalStackLayout>
+            <HorizontalStackLayout Grid.Column="1" Grid.Row="0" Padding="10">
+                <Button Text="A1" Margin="1"/>
+                <Button Text="A2" Margin="1"/>
+                <Button Text="A3" Margin="1"/>
+                <Button Text="A4" Margin="1"/>
+            </HorizontalStackLayout>
+            <Button Grid.Column="2" Grid.Row="0" Text="B3" Margin="15"/>
+            <Button Grid.Column="3" Grid.Row="0" Text="B4" Margin="15"/>
+            <Button Grid.Column="0" Grid.Row="1" Text="B5" Margin="15"/>
+            <Button Grid.Column="1" Grid.Row="1" Text="B6" Margin="15"/>
+            <Button Grid.Column="2" Grid.Row="1" Text="B7" Margin="15"/>
+            <Button Grid.Column="3" Grid.Row="1" Text="B8" Margin="15"/>
+            <Button Grid.Column="0" Grid.Row="2" Text="B9" Margin="15"/>
+            <Button Grid.Column="1" Grid.Row="2" Text="B10" Margin="15"/>
+            <Button Grid.Column="2" Grid.Row="2" Text="B11" Margin="15"/>
+            <Button Grid.Column="3" Grid.Row="2" Text="B12" Margin="15"/>
+            <Button Grid.Column="0" Grid.Row="3" Text="B13" Margin="15"/>
+            <Button Grid.Column="1" Grid.Row="3" Text="B14" Margin="15"/>
+            <Grid Grid.Column="2" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Text="B1" Margin="1"/>
+                <Button Grid.Column="1" Grid.Row="0" Text="B2" Margin="1"/>
+                <Button Grid.Column="2" Grid.Row="0" Text="B3" Margin="1"/>
+                <Button Grid.Column="3" Grid.Row="0" Text="B4" Margin="1"/>
+                <Button Grid.Column="0" Grid.Row="1" Text="B5" Margin="1"/>
+                <Button Grid.Column="1" Grid.Row="1" Text="B6" Margin="1"/>
+                <Button Grid.Column="2" Grid.Row="1" Text="B7" Margin="1"/>
+                <Button Grid.Column="3" Grid.Row="1" Text="B8" Margin="1"/>
+                <Button Grid.Column="0" Grid.Row="2" Text="B9" Margin="1"/>
+                <Button Grid.Column="1" Grid.Row="2" Text="B10" Margin="1"/>
+                <Button Grid.Column="2" Grid.Row="2" Text="B11" Margin="1"/>
+                <Button Grid.Column="3" Grid.Row="2" Text="B12" Margin="1"/>
+                <Button Grid.Column="0" Grid.Row="3" Text="B13" Margin="1"/>
+                <Button Grid.Column="1" Grid.Row="3" Text="B14" Margin="1"/>
+                <Button Grid.Column="2" Grid.Row="3" Text="B15" Margin="1"/>
+                <Button Grid.Column="3" Grid.Row="3" Text="B16" Margin="1"/>
+            </Grid>
+            <Grid Grid.Column="3" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Text="A1" Margin="15"/>
+                <Button Grid.Column="1" Grid.Row="0" Text="A2" Margin="15"/>
+                <Button Grid.Column="0" Grid.Row="1" Text="A3" Margin="15"/>
+                <Button Grid.Column="1" Grid.Row="1" Text="A4" Margin="15"/>
+            </Grid>
+        </Grid>
+        
+        
+    </ScrollView>
+
+</ContentPage>
