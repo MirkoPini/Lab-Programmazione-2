@@ -24,7 +24,7 @@
                 Text="Calcola Radici"
                 Clicked="btnCalcola_Clicked"/>
             <Label/>
-            <Label x:Name="lblResult" Text="Inserisci i valori per iniziare" HorizontalTextAlignment="Center" BackgroundColor="Gray"/>
+            <Label x:Name="lblResult" Text="Inserisci i valori per iniziare" VerticalOptions="Center" HorizontalTextAlignment="Center" BackgroundColor="Gray" HeightRequest="50" WidthRequest="400"/>
 
         </VerticalStackLayout>
     </ScrollView>
