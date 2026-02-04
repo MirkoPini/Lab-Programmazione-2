@@ -13,11 +13,12 @@
         {
             string valoreChf = entImporto.Text;
             double importoChf = Convert.ToDouble(valoreChf);
-
+            
             if(importoChf > 0)
             {
                 importoChf = importoChf * 1.09;
-                //lblRisultato = "Risultato: " + importoChf;
+                lblRisultato.Text = "Risultato: " + importoChf.ToString("F2") + " CHF";
+
                 //SemanticScreenReader.Announce(lblRisultato.Text);
             }
             else
