@@ -16,8 +16,8 @@ namespace AppQuiz.Models
 			set { _correctAnswer = value; }
 		}
 
-        public TrueFalseQuestion(string text, int points, bool correctAnswer)
-			: base(text, points)
+        public TrueFalseQuestion(string text, int points,string img, bool correctAnswer)
+			: base(text, points, img)
 		{
 			_correctAnswer = correctAnswer;
 		}

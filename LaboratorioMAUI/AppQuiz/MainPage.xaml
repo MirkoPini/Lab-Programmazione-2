@@ -23,6 +23,13 @@
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
                        TextColor="White"/>
+
+                <Image x:Name="ImgQst"
+                       Source="dotnet_bot.png"
+                       HeightRequest="185"
+                       Aspect="AspectFit"
+                       SemanticProperties.Description="ImgQst"/>
+
             </VerticalStackLayout>
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
                 <Button x:Name="TrueButton"
@@ -34,6 +41,7 @@
                         FontSize="18"
                         BackgroundColor="#27ae60"
                         CornerRadius="10"/>
+                
                 <Button x:Name="FalseButton"
                         Text="FALSO"
                         Clicked="OnAnswerClicked"
@@ -44,6 +52,26 @@
                         BackgroundColor="#c0392b"
                         CornerRadius="10"/>
             </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions="Auto, * , Auto">
+                <Button Grid.Column="0"
+                        x:Name="ResetButton"
+                        Text="Reset"
+                        Clicked="OnResetClicked"
+                        WidthRequest="130"
+                        HeightRequest="60"
+                        FontSize="18"
+                        CornerRadius="10"/>
+
+                <Button Grid.Column="2"
+                        x:Name="HintButton"
+                        Clicked="OnHintClicked"
+                        Text="Aiuto"
+                        WidthRequest="130"
+                        HeightRequest="60"
+                        FontSize="18"
+                        CornerRadius="10"/>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 

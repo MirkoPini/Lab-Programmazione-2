@@ -11,24 +11,26 @@ namespace AppQuiz
         public MainPage()
         {
             InitializeComponent();
-            _questions.Add(new TrueFalseQuestion("The Earth is flat.", 10, false));
-            _questions.Add(new TrueFalseQuestion("The sky is blue.", 10, true));
+            _questions.Add(new TrueFalseQuestion("Il C# è un linguaggio a oggetti?", 10, "c.png", true));
+            _questions.Add(new TrueFalseQuestion("Python è un linguaggio compilato?", 10, "python.png", false));
             ShowQuestion();
         }
 
         private void ShowQuestion()
         {
-            if(_currentIndex < _questions.Count)
+            if (_currentIndex < _questions.Count)
             {
                 QuestionBase current = _questions[_currentIndex];
                 QuestionTextLabel.Text = current.Text;
                 ScoreLabel.Text = $"Punti: {_score}";
+                ImgQst.Source = current.Img;
             }
             else
             {
                 QuestionTextLabel.Text = $"Fine! Punteggio finale: {_score}";
                 TrueButton.IsVisible = false;
                 FalseButton.IsVisible = false;
+                ImgQst.IsVisible = false;
             }
         }
         private async void OnAnswerClicked(object sender, EventArgs e)
@@ -48,6 +50,33 @@ namespace AppQuiz
             _currentIndex++;
             ShowQuestion();
         }
-    }
 
+        private void OnResetClicked(object sender, EventArgs e)
+        {
+            TrueButton.IsVisible = true;
+            FalseButton.IsVisible = true;
+            ImgQst.IsVisible = true;
+            _currentIndex = 0;
+            _score = 0;
+            ShowQuestion();
+        }
+
+        private void OnHintClicked(object sender, EventArgs e)
+        {
+            if (_currentIndex < _questions.Count)
+            {
+                var current = _questions[_currentIndex] as TrueFalseQuestion;
+
+                bool hint = current.CorrectAnswer;
+                if (hint)
+                {
+                    DisplayAlert("Suggerimento", "La risposta corretta è Vero.", "OK");
+                }
+                else
+                {
+                    DisplayAlert("Suggerimento", "La risposta corretta è Falso.", "OK");
+                }
+            }
+        }
+    }
 }

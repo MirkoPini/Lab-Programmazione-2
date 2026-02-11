@@ -34,10 +34,20 @@ namespace AppQuiz.Models
 			set { _text = value; }
 		}
 
-		public QuestionBase(string text, int point)
+		private string _img;
+
+		public string Img
+		{
+			get { return _img; }
+			set { _img = value; }
+		}
+
+
+		public QuestionBase(string text, int point, string img)
 		{
 			Text = text;
 			Point = point;
+			Img = img;
         }
 
 		public abstract bool CheckAnswer(bool userAnswer);
