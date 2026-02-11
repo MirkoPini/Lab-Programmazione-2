@@ -32,7 +32,8 @@ namespace AppQuiz
             _questions.Add(new TrueFalseQuestion("Un indirizzo IP identifica un dispositivo in rete?", 10, "network.png", true));
             _questions.Add(new TrueFalseQuestion("La RAM conserva i dati anche senza alimentazione?", 10, "ram.png", false));
             _questions.Add(new TrueFalseQuestion("Un algoritmo è una sequenza finita di istruzioni?", 10, "algorithm.png", true));
-
+            var rnd = new Random();
+            _questions = _questions.OrderBy(x => rnd.Next()).ToList();
             ShowQuestion();
         }
 
