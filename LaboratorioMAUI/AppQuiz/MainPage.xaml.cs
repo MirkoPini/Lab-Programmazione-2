@@ -1,24 +1,52 @@
-﻿namespace AppQuiz
+﻿using AppQuiz.Models;
+
+namespace AppQuiz
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private List<QuestionBase> _questions = new List<QuestionBase>();
+        private int _currentIndex = 0;
+        private int _score = 0;
 
         public MainPage()
         {
             InitializeComponent();
+            _questions.Add(new TrueFalseQuestion("The Earth is flat.", 10, false));
+            _questions.Add(new TrueFalseQuestion("The sky is blue.", 10, true));
+            ShowQuestion();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void ShowQuestion()
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if(_currentIndex < _questions.Count)
+            {
+                QuestionBase current = _questions[_currentIndex];
+                QuestionTextLabel.Text = current.Text;
+                ScoreLabel.Text = $"Punti: {_score}";
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
+            {
+                QuestionTextLabel.Text = $"Fine! Punteggio finale: {_score}";
+                TrueButton.IsVisible = false;
+                FalseButton.IsVisible = false;
+            }
+        }
+        private async void OnAnswerClicked(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            if (_questions[_currentIndex].CheckAnswer(userAnswer))
+            {
+                _score += _questions[_currentIndex].Point;
+                await DisplayAlert("Esatto!", "Hai indovinato.", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Errore", "Riprova alla prossima", "OK");
+            }
+            _currentIndex++;
+            ShowQuestion();
         }
     }
 

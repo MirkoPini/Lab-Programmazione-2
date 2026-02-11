@@ -33,5 +33,13 @@ namespace AppQuiz.Models
 			get { return _text; }
 			set { _text = value; }
 		}
-	}
+
+		public QuestionBase(string text, int point)
+		{
+			Text = text;
+			Point = point;
+        }
+
+		public abstract bool CheckAnswer(bool userAnswer);
+    }
 }
