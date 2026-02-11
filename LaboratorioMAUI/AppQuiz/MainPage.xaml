@@ -5,12 +5,19 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+            <Entry x:Name="NameEntry"
+                   WidthRequest="200"
+                   Placeholder="Inserisci il tuo nome"
+                   Keyboard="Text"
+                   HorizontalOptions="Center"/>
+            
             <Label x:Name="ScoreLabel"
                    Text="Punti: 0"
                    FontSize="22"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="{StaticResource Primary}"/>
+            
             <VerticalStackLayout Spacing="15">
                 <Label Text="DOMANDA"
                        FontSize="12"
@@ -29,8 +36,8 @@
                        HeightRequest="185"
                        Aspect="AspectFit"
                        SemanticProperties.Description="ImgQst"/>
-
             </VerticalStackLayout>
+            
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
                 <Button x:Name="TrueButton"
                         Text="VERO"
@@ -72,6 +79,7 @@
                         FontSize="18"
                         CornerRadius="10"/>
             </Grid>
+            
         </VerticalStackLayout>
     </ScrollView>
 

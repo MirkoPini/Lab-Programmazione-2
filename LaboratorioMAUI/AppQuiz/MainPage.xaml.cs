@@ -27,7 +27,10 @@ namespace AppQuiz
             }
             else
             {
-                QuestionTextLabel.Text = $"Fine! Punteggio finale: {_score}";
+                string NamePlayer = NameEntry.Text;
+                QuestionTextLabel.Text = $"Fine! Punteggio {NamePlayer}: {_score}";
+                NameEntry.IsVisible = false;
+                ScoreLabel.IsVisible = false;
                 TrueButton.IsVisible = false;
                 FalseButton.IsVisible = false;
                 ImgQst.IsVisible = false;
@@ -53,6 +56,8 @@ namespace AppQuiz
 
         private void OnResetClicked(object sender, EventArgs e)
         {
+            ScoreLabel.IsVisible = true;
+            NameEntry.IsVisible = true;
             TrueButton.IsVisible = true;
             FalseButton.IsVisible = true;
             ImgQst.IsVisible = true;
@@ -66,6 +71,9 @@ namespace AppQuiz
             if (_currentIndex < _questions.Count)
             {
                 var current = _questions[_currentIndex] as TrueFalseQuestion;
+
+                _score -= (_questions[_currentIndex].Point)/2;
+                ScoreLabel.Text = $"Punti: {_score}";
 
                 bool hint = current.CorrectAnswer;
                 if (hint)
