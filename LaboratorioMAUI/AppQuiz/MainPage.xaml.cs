@@ -11,8 +11,28 @@ namespace AppQuiz
         public MainPage()
         {
             InitializeComponent();
-            _questions.Add(new TrueFalseQuestion("Il C# è un linguaggio a oggetti?", 10, "c.png", true));
             _questions.Add(new TrueFalseQuestion("Python è un linguaggio compilato?", 10, "python.png", false));
+            _questions.Add(new TrueFalseQuestion("C# è un linguaggio orientato agli oggetti?", 10, "c_sharp.png", true));
+            _questions.Add(new TrueFalseQuestion("HTML è un linguaggio di programmazione?", 10, "html.png", false));
+            _questions.Add(new TrueFalseQuestion("Java supporta il multithreading?", 10, "java.png", true));
+            _questions.Add(new TrueFalseQuestion("CSS serve per strutturare il contenuto di una pagina web?", 10, "css.png", false));
+            _questions.Add(new TrueFalseQuestion("Un database relazionale utilizza tabelle?", 10, "database.png", true));
+            _questions.Add(new TrueFalseQuestion("JavaScript può essere eseguito solo lato server?", 10, "javascript.png", false));
+            _questions.Add(new TrueFalseQuestion("Il protocollo HTTP è stateless?", 10, "http.png", true));
+            _questions.Add(new TrueFalseQuestion("SQL serve per creare animazioni 3D?", 10, "sql.png", false));
+            _questions.Add(new TrueFalseQuestion("Un array può contenere più elementi dello stesso tipo?", 10, "array.png", true));
+            _questions.Add(new TrueFalseQuestion("Il metodo GET è più sicuro del metodo POST per inviare password?", 10, "http.png", false));
+            _questions.Add(new TrueFalseQuestion("Git è un sistema di controllo di versione?", 10, "git.png", true));
+            _questions.Add(new TrueFalseQuestion("Un ciclo while viene eseguito sempre almeno una volta?", 10, "loop.png", false));
+            _questions.Add(new TrueFalseQuestion("Il sistema binario utilizza solo le cifre 0 e 1?", 10, "binary.png", true));
+            _questions.Add(new TrueFalseQuestion("Un firewall serve per aumentare la velocità della CPU?", 10, "security.png", false));
+            _questions.Add(new TrueFalseQuestion("JSON è un formato di scambio dati?", 10, "json.png", true));
+            _questions.Add(new TrueFalseQuestion("Un compilatore traduce il codice sorgente in linguaggio macchina?", 10, "compiler.png", true));
+            _questions.Add(new TrueFalseQuestion("Linux è un sistema operativo open source?", 10, "linux.png", true));
+            _questions.Add(new TrueFalseQuestion("Un indirizzo IP identifica un dispositivo in rete?", 10, "network.png", true));
+            _questions.Add(new TrueFalseQuestion("La RAM conserva i dati anche senza alimentazione?", 10, "ram.png", false));
+            _questions.Add(new TrueFalseQuestion("Un algoritmo è una sequenza finita di istruzioni?", 10, "algorithm.png", true));
+
             ShowQuestion();
         }
 
@@ -36,7 +56,7 @@ namespace AppQuiz
                 ImgQst.IsVisible = false;
             }
         }
-        private async void OnAnswerClicked(object sender, EventArgs e)
+        private void OnAnswerClicked(object sender, EventArgs e)
         {
             var btn = (Button)sender;
             bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
@@ -44,11 +64,11 @@ namespace AppQuiz
             if (_questions[_currentIndex].CheckAnswer(userAnswer))
             {
                 _score += _questions[_currentIndex].Point;
-                await DisplayAlert("Esatto!", "Hai indovinato.", "OK");
+                DisplayAlert("Esatto!", "Hai indovinato.", "OK");
             }
             else
             {
-                await DisplayAlert("Errore", "Riprova alla prossima", "OK");
+                DisplayAlert("Errore", "Riprova alla prossima", "OK");
             }
             _currentIndex++;
             ShowQuestion();
