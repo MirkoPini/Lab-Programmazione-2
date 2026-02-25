@@ -2,8 +2,21 @@ namespace AppQuiz;
 
 public partial class ResultPage : ContentPage
 {
-	public ResultPage()
+	int _score = 0;
+    public ResultPage(int score)
 	{
+		_score = score;
 		InitializeComponent();
-	}
+		ShowGUI();
+    }
+
+	private void ShowGUI()
+	{
+		lblScore.Text = _score.ToString();
+    }
+
+	private async void OnPlayAgainClicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new MainPage());
+    }
 }

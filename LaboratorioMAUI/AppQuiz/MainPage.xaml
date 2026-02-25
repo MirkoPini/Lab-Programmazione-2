@@ -82,8 +82,8 @@
 
             <Button
                 x:Name="btnResult" 
-                WidthRequest="70" 
-                HeightRequest="70"
+                WidthRequest="160" 
+                HeightRequest="50"
                 Text="Vai a risultati"
                 Clicked="btnResult_Clicked"/>
 

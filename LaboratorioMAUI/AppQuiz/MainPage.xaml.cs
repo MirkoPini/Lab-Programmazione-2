@@ -32,6 +32,7 @@ namespace AppQuiz
             _questions.Add(new TrueFalseQuestion("Un indirizzo IP identifica un dispositivo in rete?", 10, "network.png", true));
             _questions.Add(new TrueFalseQuestion("La RAM conserva i dati anche senza alimentazione?", 10, "ram.png", false));
             _questions.Add(new TrueFalseQuestion("Un algoritmo è una sequenza finita di istruzioni?", 10, "algorithm.png", true));
+
             var rnd = new Random();
             _questions = _questions.OrderBy(x => rnd.Next()).ToList();
             ShowQuestion();
@@ -45,6 +46,7 @@ namespace AppQuiz
                 QuestionTextLabel.Text = current.Text;
                 ScoreLabel.Text = $"Punti: {_score}";
                 ImgQst.Source = current.Img;
+                btnResult.IsVisible = false;
             }
             else
             {
@@ -55,6 +57,8 @@ namespace AppQuiz
                 TrueButton.IsVisible = false;
                 FalseButton.IsVisible = false;
                 ImgQst.IsVisible = false;
+                HintButton.IsVisible = false;
+                btnResult.IsVisible = true;
             }
         }
         private void OnAnswerClicked(object sender, EventArgs e)
@@ -82,6 +86,7 @@ namespace AppQuiz
             TrueButton.IsVisible = true;
             FalseButton.IsVisible = true;
             ImgQst.IsVisible = true;
+            HintButton.IsVisible = true;
             _currentIndex = 0;
             _score = 0;
             ShowQuestion();
@@ -110,7 +115,14 @@ namespace AppQuiz
 
         private void btnResult_Clicked(object sender, EventArgs e)
         {
-            
+            OnQuizFinished();
+        }
+
+        private async void OnQuizFinished()
+        {
+            //Richiamiamo il metodo PushAsync e gli passiamo il nuovo oggetto ResultPage
+            //Attendiamo senza bloccare la pagina grazie ad await e async
+            await Navigation.PushAsync(new ResultPage(_score));
         }
     }
 }
