@@ -107,5 +107,10 @@ namespace AppQuiz
                 }
             }
         }
+
+        private void btnResult_Clicked(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
