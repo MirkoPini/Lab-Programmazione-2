@@ -50,6 +50,8 @@ namespace AppQuiz.Models
 			Img = img;
         }
 
-		public abstract bool CheckAnswer(bool userAnswer);
+		public abstract bool CheckAnswerTF(bool userAnswer);
+
+		public abstract bool CheckAnswerOP(string userAnswer);
     }
 }

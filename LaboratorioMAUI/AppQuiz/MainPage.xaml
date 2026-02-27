@@ -16,7 +16,7 @@
                    FontSize="22"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
-                   TextColor="{StaticResource Primary}"/>
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Primary}}"/>
             
             <VerticalStackLayout Spacing="15">
                 <Label Text="DOMANDA"
@@ -28,8 +28,7 @@
                        Text="Caricamento domanda..."
                        FontSize="24"
                        HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       TextColor="White"/>
+                       FontAttributes="Bold"/>
 
                 <Image x:Name="ImgQst"
                        Source="dotnet_bot.png"
@@ -57,6 +56,19 @@
                         HeightRequest="60"
                         FontSize="18"
                         BackgroundColor="#c0392b"
+                        CornerRadius="10"/>
+
+                <Entry x:Name="AnswerEntry"
+                       WidthRequest="200"
+                       Placeholder="Risposta aperta"
+                       Keyboard="Text"/>
+
+                <Button x:Name="SubmitButton"
+                        Text="Invia"
+                        Clicked="OnAnswerClicked"
+                        WidthRequest="130"
+                        HeightRequest="60"
+                        FontSize="18"
                         CornerRadius="10"/>
             </HorizontalStackLayout>
 
