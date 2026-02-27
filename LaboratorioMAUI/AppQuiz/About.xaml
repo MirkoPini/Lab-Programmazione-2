@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppQuiz.About"
+             Title="About">
+    <VerticalStackLayout Spacing="50" Padding="100">
+        <Label 
+            Text="Relase 27.02.2026: v1.0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label 
+            Text="Un’app di quiz semplice e coinvolgente per allenare la mente e divertirsi."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="20"/>   
+
+        <Label
+            Text="Credits: Mirko Pini"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="20"/>
+
+        <Image x:Name="ImgLogo"
+               WidthRequest="150"
+               Source="logo.png"
+               Aspect="AspectFit"
+               SemanticProperties.Description="ImgQst"/>
+
+        <Label 
+            Text="GitHub"
+            HorizontalOptions="Center"
+            FontSize="20"
+            TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLinkTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+            Text="Questa app Quiz è fornita a scopo ludico ed educativo. I contenuti, le domande e le risposte non garantiscono accuratezza assoluta e non sostituiscono fonti ufficiali o materiali didattici certificati."
+            HorizontalOptions="Center"
+            FontSize="20"/>
+    </VerticalStackLayout>
+</ContentPage>

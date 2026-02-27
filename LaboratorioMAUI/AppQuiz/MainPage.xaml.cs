@@ -1,4 +1,5 @@
 ﻿using AppQuiz.Models;
+using System.Threading.Tasks;
 
 namespace AppQuiz
 {
@@ -137,6 +138,11 @@ namespace AppQuiz
             //Richiamiamo il metodo PushAsync e gli passiamo il nuovo oggetto ResultPage
             //Attendiamo senza bloccare la pagina grazie ad await e async
             await Navigation.PushAsync(new ResultPage(_score));
+        }
+
+        private async void btnAbout_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new About());
         }
     }
 }

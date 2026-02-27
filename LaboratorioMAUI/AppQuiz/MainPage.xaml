@@ -5,6 +5,15 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+            <Button x:Name="btnAbout"
+                    Text="About"
+                    Clicked="btnAbout_Clicked"
+                    WidthRequest="80"
+                    HeightRequest="40"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="End"/>
+
             <Entry x:Name="NameEntry"
                    WidthRequest="200"
                    Placeholder="Inserisci il tuo nome"
