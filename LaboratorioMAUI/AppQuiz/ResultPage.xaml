@@ -9,7 +9,7 @@
                FontSize="50"
                HorizontalOptions="Center"/>
 
-        <Border Background="#3b3c3d" 
+        <Border Background="{AppThemeBinding Light={StaticResource #d1d1d1}, Dark={StaticResource #3b3c3d}}" 
                 StrokeShape="RoundRectangle 10" 
                 HeightRequest="150" 
                 HorizontalOptions="FillAndExpand">

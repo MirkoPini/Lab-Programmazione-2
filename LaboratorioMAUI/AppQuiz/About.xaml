@@ -41,6 +41,7 @@
         <Label
             Text="Questa app Quiz è fornita a scopo ludico ed educativo. I contenuti, le domande e le risposte non garantiscono accuratezza assoluta e non sostituiscono fonti ufficiali o materiali didattici certificati."
             HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
             FontSize="20"/>
     </VerticalStackLayout>
 </ContentPage>

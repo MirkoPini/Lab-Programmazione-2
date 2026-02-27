@@ -111,19 +111,25 @@ namespace AppQuiz
         {
             if (_currentIndex < _questions.Count)
             {
-                var current = _questions[_currentIndex] as TrueFalseQuestion;
-
                 _score -= (_questions[_currentIndex].Point)/2;
                 ScoreLabel.Text = $"Punti: {_score}";
-
-                bool hint = current.CorrectAnswer;
-                if (hint)
+                if (_questions[_currentIndex] is TrueFalseQuestion)
                 {
-                    DisplayAlert("Suggerimento", "La risposta corretta è Vero.", "OK");
-                }
-                else
+                    var current = _questions[_currentIndex] as TrueFalseQuestion;
+                    bool hint = current.CorrectAnswer;
+                    if (hint)
+                    {
+                        DisplayAlert("Suggerimento", "La risposta corretta è Vero.", "OK");
+                    }
+                    else
+                    {
+                        DisplayAlert("Suggerimento", "La risposta corretta è Falso.", "OK");
+                    }
+                }else if (_questions[_currentIndex] is OpenQuestion)
                 {
-                    DisplayAlert("Suggerimento", "La risposta corretta è Falso.", "OK");
+                    var current = _questions[_currentIndex] as OpenQuestion;
+                    string hint = current.CorrectAnswer;
+                    DisplayAlert("Suggerimento", $"La risposta corretta è {hint}", "OK");
                 }
             }
         }
