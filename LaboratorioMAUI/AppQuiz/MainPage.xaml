@@ -14,12 +14,6 @@
                     CornerRadius="10"
                     HorizontalOptions="End"/>
 
-            <Entry x:Name="NameEntry"
-                   WidthRequest="200"
-                   Placeholder="Inserisci il tuo nome"
-                   Keyboard="Text"
-                   HorizontalOptions="Center"/>
-            
             <Label x:Name="ScoreLabel"
                    Text="Punti: 0"
                    FontSize="22"

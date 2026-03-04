@@ -32,6 +32,21 @@
                Text="🏆 Miglior Punteggio: 0"
                TextColor="Gold"
                HorizontalOptions="Center"/>
+        
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+            
+            <Entry x:Name="EntName"
+                   WidthRequest="200"
+                   Placeholder="Inserisci il tuo nome"
+                   Keyboard="Text"
+                   HorizontalOptions="Center"/>
+
+            <Button x:Name="BtnSave"
+                    WidthRequest="100"
+                    Text="Salva"
+                    Clicked="OnSaveClicked"/>
+
+        </HorizontalStackLayout>
 
         <Button x:Name="btnPlayAgain"
                 Text="GIOCA ANCORA"

@@ -49,9 +49,7 @@ namespace AppQuiz
             }
             else
             {
-                string NamePlayer = NameEntry.Text;
-                QuestionTextLabel.Text = $"Fine! Punteggio {NamePlayer}: {_score}";
-                NameEntry.IsVisible = false;
+                QuestionTextLabel.Text = $"Fine! Punteggio: {_score}";
                 ScoreLabel.IsVisible = false;
                 TrueButton.IsVisible = false;
                 FalseButton.IsVisible = false;
@@ -99,7 +97,6 @@ namespace AppQuiz
         private void OnResetClicked(object sender, EventArgs e)
         {
             ScoreLabel.IsVisible = true;
-            NameEntry.IsVisible = true;
             ImgQst.IsVisible = true;
             HintButton.IsVisible = true;
             _currentIndex = 0;
@@ -149,6 +146,6 @@ namespace AppQuiz
         private async void btnAbout_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new About());
-        }
+        } 
     }
 }
