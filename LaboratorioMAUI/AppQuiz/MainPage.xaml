@@ -64,7 +64,8 @@
                 <Entry x:Name="AnswerEntry"
                        WidthRequest="200"
                        Placeholder="Risposta aperta"
-                       Keyboard="Text"/>
+                       Keyboard="Text"
+                       />
 
                 <Button x:Name="SubmitButton"
                         Text="Invia"

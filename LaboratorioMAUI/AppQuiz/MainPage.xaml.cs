@@ -9,18 +9,61 @@ namespace AppQuiz
         private int _currentIndex = 0;
         private int _score = 0;
         
+        private static readonly string _fileQuestionsPath = Path.Combine(
+            FileSystem.AppDataDirectory, "questions.txt");
 
         public MainPage()
         {
             InitializeComponent();
-            _questions.Add(new TrueFalseQuestion("Python è un linguaggio compilato?", 10, "python.png", false));
-            _questions.Add(new TrueFalseQuestion("C# è un linguaggio orientato agli oggetti?", 10, "c_sharp.png", true));
-            _questions.Add(new TrueFalseQuestion("HTML è un linguaggio di programmazione?", 10, "html.png", false));
-            _questions.Add(new TrueFalseQuestion("Java supporta il multithreading?", 10, "java.png", true));
-            _questions.Add(new OpenQuestion("Come si chiama questo sistema operativo?", 10, "linux.png", "linux"));
+            SetupQuestions();
             var rnd = new Random();
             _questions = _questions.OrderBy(x => rnd.Next()).ToList();
             ShowQuestion(); 
+        }
+
+        private void SetupQuestions()
+        {
+            try
+            {
+                if (File.Exists(_fileQuestionsPath))
+                {
+                    string[] questions = File.ReadAllLines(_fileQuestionsPath);
+                    foreach (string question in questions)
+                    {
+                        string QuestionType = question.Split(";")[0];
+                        if (QuestionType.Equals("TF"))
+                        {
+                            string domanda = question.Split(";")[1];
+                            string punteggio = question.Split(";")[2];
+                            string risposta = question.Split(";")[3];
+                            string img = question.Split(";")[4];
+                            if (int.TryParse(punteggio, out int punti) && bool.TryParse(risposta, out bool soluzione))
+                            {
+                                _questions.Add(new TrueFalseQuestion(domanda, punti, img, soluzione));
+                            }
+                        }
+                        else if (QuestionType.Equals("OPEN"))
+                        {
+                            string domanda = question.Split(";")[1];
+                            string punteggio = question.Split(";")[2];
+                            string risposta = question.Split(";")[3];
+                            string img = question.Split(";")[4];
+                            if(int.TryParse(punteggio, out int punti))
+                            {
+                                _questions.Add(new OpenQuestion(domanda, punti, img, risposta));
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    DisplayAlert("Errore", "Nessuna domanda presente", "OK");
+                }
+
+            } catch(Exception ex)
+            {
+                DisplayAlert("Errore nelle domande", "Lettura fallita:" + ex.Message, "OK");
+            }
         }
 
         private void ShowQuestion()
@@ -41,6 +84,7 @@ namespace AppQuiz
                 }
                 else if (current is OpenQuestion)
                 {
+                    AnswerEntry.Text = "";
                     AnswerEntry.IsVisible = true;
                     SubmitButton.IsVisible = true;
                     TrueButton.IsVisible = false;

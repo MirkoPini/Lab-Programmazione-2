@@ -17,11 +17,18 @@ public partial class ResultPage : ContentPage
 
 	private void ShowGUI()
 	{
-        string content = File.ReadAllText(_filePath);
-		string nome = content.Split(';')[0];
-		string data = content.Split(';')[2];
-        lblScore.Text = _score.ToString();
-        lblBestScore.Text = $"🏆 Miglior Punteggio: {LoadBestScore()}\n Di {nome} il {data}";
+		if (!File.Exists(_filePath))
+		{
+			string content = File.ReadAllText(_filePath);
+			string nome = content.Split(';')[0];
+			string data = content.Split(';')[2];
+            lblBestScore.Text = $"🏆 Miglior Punteggio: {LoadBestScore()}\n Di {nome} il {data}";
+        }else
+		{
+			lblBestScore.Text = "🏆 Nessun punteggio presente";
+        }
+		lblScore.Text = _score.ToString();
+        
     }
 
 	private async void OnPlayAgainClicked(object sender, EventArgs e)
@@ -85,6 +92,10 @@ public partial class ResultPage : ContentPage
 			try
 			{
 				File.WriteAllText(_filePath,EntName.Text + ";" + score.ToString() + ";" + DateTime.Now.ToString("yyyy-MM-dd"));
+                string content = File.ReadAllText(_filePath);
+                string nome = content.Split(';')[0];
+                string data = content.Split(';')[2];
+                lblBestScore.Text = $"🏆 Miglior Punteggio: {LoadBestScore()}\n Di {nome} il {data}";
             }
 			catch (Exception ex)
 			{
