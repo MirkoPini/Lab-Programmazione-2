@@ -17,7 +17,7 @@ public partial class ResultPage : ContentPage
 
 	private void ShowGUI()
 	{
-		if (!File.Exists(_filePath))
+		if (File.Exists(_filePath))
 		{
 			string content = File.ReadAllText(_filePath);
 			string nome = content.Split(';')[0];
