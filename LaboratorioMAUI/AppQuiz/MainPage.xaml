@@ -5,14 +5,32 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
-            <Button x:Name="btnAbout"
+            <Grid Padding="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnAdd"
+                    Text="Aggiungi domande"
+                    Clicked="btnAdd_Clicked"
+                    WidthRequest="200"
+                    HeightRequest="40"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="Start"
+                    Grid.Column="0"/>
+
+                <Button x:Name="btnAbout"
                     Text="About"
                     Clicked="btnAbout_Clicked"
                     WidthRequest="80"
                     HeightRequest="40"
                     FontSize="18"
                     CornerRadius="10"
-                    HorizontalOptions="End"/>
+                    HorizontalOptions="End"
+                    Grid.Column="1"/>
+            </Grid>
 
             <Label x:Name="ScoreLabel"
                    Text="Punti: 0"

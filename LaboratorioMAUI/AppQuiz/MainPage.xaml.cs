@@ -8,6 +8,7 @@ namespace AppQuiz
         private List<QuestionBase> _questions = new List<QuestionBase>();
         private int _currentIndex = 0;
         private int _score = 0;
+        private int _numberOfQuestion;
         
         private static readonly string _fileQuestionsPath = Path.Combine(
             FileSystem.AppDataDirectory, "questions.txt");
@@ -18,7 +19,6 @@ namespace AppQuiz
             SetupQuestions();
             var rnd = new Random();
             _questions = _questions.OrderBy(x => rnd.Next()).ToList();
-            ShowQuestion(); 
         }
 
         private void SetupQuestions()
@@ -59,22 +59,33 @@ namespace AppQuiz
                 {
                     DisplayAlert("Errore", "Nessuna domanda presente", "OK");
                 }
-
+                NumberQuestions();
             } catch(Exception ex)
             {
                 DisplayAlert("Errore nelle domande", "Lettura fallita:" + ex.Message, "OK");
             }
         }
 
-        private void ShowQuestion()
+        private void NumberQuestions()
         {
-            if (_currentIndex < _questions.Count)
+            QuestionTextLabel.Text = $"Qunte domande vuoi fare (Max: {_questions.Count})?";
+            AnswerEntry.Placeholder = "1, 2, ...";
+            SubmitButton.Text = "OK";
+            TrueButton.IsVisible = false;
+            FalseButton.IsVisible = false;
+            ImgQst.IsVisible = false;
+            HintButton.IsVisible = false;
+            btnResult.IsVisible = false;
+        }
+
+        private async Task ShowQuestion()
+        {
+            if (_currentIndex < _questions.Count && _currentIndex < _numberOfQuestion)
             {
                 QuestionBase current = _questions[_currentIndex];
                 QuestionTextLabel.Text = current.Text;
                 ScoreLabel.Text = $"Punti: {_score}";
                 ImgQst.Source = current.Img;
-                btnResult.IsVisible = false;
                 if (current is TrueFalseQuestion)
                 {
                     TrueButton.IsVisible = true;
@@ -106,36 +117,63 @@ namespace AppQuiz
         }
         private void OnAnswerClicked(object sender, EventArgs e)
         {
-            if (_questions[_currentIndex] is TrueFalseQuestion)
+            if ((SubmitButton.Text).Equals("OK"))
             {
-                var btn = (Button)sender;
-                bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
-
-                if (_questions[_currentIndex].CheckAnswerTF(userAnswer))
+                string questions = AnswerEntry.Text;
+                if (int.TryParse(questions, out _numberOfQuestion))
                 {
-                    _score += _questions[_currentIndex].Point;
-                    DisplayAlert("Esatto!", "Hai indovinato.", "OK");
+                    if (_numberOfQuestion <= 10 && _numberOfQuestion > 0)
+                    {
+                        SubmitButton.Text = "Invia";
+                        AnswerEntry.Placeholder = "Risposta aperta";
+                        ImgQst.IsVisible = true;
+                        HintButton.IsVisible = true;
+                        ShowQuestion();
+                    }
+                    else
+                    {
+                        DisplayAlert("Errore", "Numero non valido", "OK");
+                    }
                 }
                 else
                 {
-                    DisplayAlert("Errore", "Riprova alla prossima", "OK");
-                }
-            }else if (_questions[_currentIndex] is OpenQuestion)
-            {
-                var btn = (Button)sender;
-                string userAnswer = AnswerEntry.Text.ToLower();
-                if (_questions[_currentIndex].CheckAnswerOP(userAnswer))
-                {
-                    _score += _questions[_currentIndex].Point;
-                    DisplayAlert("Esatto!", "Hai indovinato.", "OK");
-                }
-                else
-                {
-                    DisplayAlert("Errore", "Riprova alla prossima", "OK");
+                    DisplayAlert("Errore", "Valore inserito non valido!", "OK");
+                    NumberQuestions();
                 }
             }
+            else 
+            {
+                if (_questions[_currentIndex] is TrueFalseQuestion)
+                {
+                    var btn = (Button)sender;
+                    bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
+
+                    if (_questions[_currentIndex].CheckAnswerTF(userAnswer))
+                    {
+                        _score += _questions[_currentIndex].Point;
+                        DisplayAlert("Esatto!", "Hai indovinato.", "OK");
+                    }
+                    else
+                    {
+                        DisplayAlert("Errore", "Riprova alla prossima", "OK");
+                    }
+                } else if (_questions[_currentIndex] is OpenQuestion)
+                {
+                    var btn = (Button)sender;
+                    string userAnswer = AnswerEntry.Text.ToLower();
+                    if (_questions[_currentIndex].CheckAnswerOP(userAnswer))
+                    {
+                        _score += _questions[_currentIndex].Point;
+                        DisplayAlert("Esatto!", "Hai indovinato.", "OK");
+                    }
+                    else
+                    {
+                        DisplayAlert("Errore", "Riprova alla prossima", "OK");
+                    }
+                }
                 _currentIndex++;
-            ShowQuestion();
+                ShowQuestion();
+            }
         }
 
         private void OnResetClicked(object sender, EventArgs e)
@@ -190,6 +228,11 @@ namespace AppQuiz
         private async void btnAbout_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new About());
-        } 
+        }
+
+        private async void btnAdd_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddQuestion());
+        }
     }
 }

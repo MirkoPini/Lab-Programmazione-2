@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppQuiz.AddQuestion"
+             Title="AddQuestion">
+    <VerticalStackLayout Padding="20" Spacing="50" VerticalOptions="Center" HorizontalOptions="Center">
+        <Label x:Name="lblPsw"
+               Text="Inserisci la password"/>
+
+        <Entry x:Name="entPsw"
+               Placeholder="Password"
+               Keyboard="Text"/>
+
+        <Button x:Name="btnPsw"
+                Text="OK"
+                Clicked="OnPasswordClicked"/>
+
+        <Label x:Name="lblTitolo"
+               FontSize="30"
+               Text="Inserisci la domanda da aggiungere!"
+               HorizontalOptions="Center"/>
+
+        <Entry x:Name="entQuestion"
+               Placeholder="Inserisci la domanda"/>
+
+        <HorizontalStackLayout Spacing="50">
+            <Button x:Name="btnOP"
+                Text="Domanda aperta"
+                FontSize="20"
+                TextColor="White"
+                BackgroundColor="Green"
+                HeightRequest="50"
+                WidthRequest="300"/>
+            
+            <Button x:Name="btnTF"
+                    Clicked="OnTFClicked"
+                    Text="Vero Falso"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    HeightRequest="50"
+                    WidthRequest="300"/>
+
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
