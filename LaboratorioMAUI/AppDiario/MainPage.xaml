@@ -4,28 +4,36 @@
              x:Class="AppDiario.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="30" HorizontalOptions="Center">
-            <Label 
-                Text="IL mio diario"
-                FontSize="24" 
-                FontAttributes="Bold" />
+        <VerticalStackLayout Spacing="20" Padding="50">
+            
+            <Label x:Name="lblDiario" 
+                   Text="IL mio diario"
+                   FontSize="24"
+                   FontAttributes="Bold"/>
             
             <Entry x:Name="EntTitolo"
-                   Placeholder="Inserisci Titolo" />
+                   Placeholder="Inserisci Titolo"/>
             
             <Entry x:Name="EntTesto"
-                   Placeholder="Inserisci Testo" />
+                   Placeholder="Inserisci Testo"/>
             
-            <Button Text="SALVA NOTA"
+            <Button x:Name="btnSalva"
+                    Text="Salva Nota"
                     Clicked="OnSalvaClicked"
-                    BackgroundColor="Green" />
+                    BackgroundColor="Green"/>
             
-            <Button Text="LEGGI TUTTE LE NOTE"
-                    Clicked="OnLeggiClicked" />
-            
+            <Button x:Name="btnLeggi"
+                    Text="Leggi tutte le note"
+                    Clicked="OnLeggiClicked"/>
+
+            <Label x:Name="lblNoteSalvate"
+                   Text="Note salvate nel file:" 
+                   FontAttributes="Italic"/>
+
             <Editor x:Name="EdiDisplay"
                     HeightRequest="300"
-                    IsReadOnly="True" />
+                    IsReadOnly="True"/>
+
         </VerticalStackLayout>
     </ScrollView>
 

@@ -58,7 +58,5 @@ namespace AppDiario
                 EdiDisplay.Text = "Il file è vuoto o non esiste.";
             }
         }
-
     }
-
 }
