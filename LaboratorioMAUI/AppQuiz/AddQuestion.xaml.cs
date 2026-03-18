@@ -39,7 +39,7 @@ public partial class AddQuestion : ContentPage
 	{
 		_question = entQuestion.Text;
         entQuestion.IsVisible = false;
-        lblTitolo.Text = 
+		lblTitolo.Text = "Soluzione della domanda:";
 		btnOP.Text = "Vero";
         btnTF.Text = "Falso";
 		
