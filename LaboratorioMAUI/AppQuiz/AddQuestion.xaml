@@ -25,12 +25,13 @@
 
         <HorizontalStackLayout Spacing="50">
             <Button x:Name="btnOP"
-                Text="Domanda aperta"
-                FontSize="20"
-                TextColor="White"
-                BackgroundColor="Green"
-                HeightRequest="50"
-                WidthRequest="300"/>
+                    Clicked="OnOPClicked"
+                    Text="Domanda aperta"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    HeightRequest="50"
+                    WidthRequest="300"/>
             
             <Button x:Name="btnTF"
                     Clicked="OnTFClicked"

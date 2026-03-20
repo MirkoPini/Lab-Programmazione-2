@@ -122,7 +122,7 @@ namespace AppQuiz
                 string questions = AnswerEntry.Text;
                 if (int.TryParse(questions, out _numberOfQuestion))
                 {
-                    if (_numberOfQuestion <= 10 && _numberOfQuestion > 0)
+                    if (_numberOfQuestion <= _questions.Count && _numberOfQuestion > 0)
                     {
                         SubmitButton.Text = "Invia";
                         AnswerEntry.Placeholder = "Risposta aperta";
