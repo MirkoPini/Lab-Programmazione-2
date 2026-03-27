@@ -39,7 +39,63 @@ namespace AppSpeseCorrezioneTest
             
         }
 
-        [TearDown]
+        [Test]
+        public void Test_Inserimento()
+        {
+            //Aspettiamo 3 secondi che l'app sia caricata
+            //Thread permette la programmazione parallela
+            //System.Threading.Thread.Sleep(3000);
+
+            //Nella variabile inserisco l'elemento che ha l'automationID = EntNomeLista
+            var inputNome = _driver.FindElement(MobileBy.AccessibilityId("EntNomeLista"));
+            //Mettiamo il focus sull'entry
+            inputNome.Click();
+            //Puliamo l'entry
+            inputNome.Clear();
+            //Scriviamo nell Controllo
+            inputNome.SendKeys("Aprile");
+            //System.Threading.Thread.Sleep(3000);
+
+            var inputDescrizione = _driver.FindElement(MobileBy.AccessibilityId("EntDescrizione"));
+
+            inputDescrizione.Click();
+
+            inputDescrizione.Clear();
+
+            inputDescrizione.SendKeys("Formaggio");
+            //System.Threading.Thread.Sleep(3000);
+
+            var inputImporto = _driver.FindElement(MobileBy.AccessibilityId("EntImporto"));
+
+            inputImporto.Click();
+
+            inputImporto.Clear();
+
+            inputImporto.SendKeys("12.60");
+            //System.Threading.Thread.Sleep(3000);
+        }
+
+        [Test]
+        public void Test_Bottoni()
+        {
+            //System.Threading.Thread.Sleep(3000);
+
+            var bottonneSalva = _driver.FindElement(MobileBy.AccessibilityId("BtnSalva"));
+
+            Assert.That(bottonneSalva.Text, Is.EqualTo("SALVA SPESA"));
+
+            bottonneSalva.Click();
+            //System.Threading.Thread.Sleep(1000);
+
+            var bottonneVedi = _driver.FindElement(MobileBy.AccessibilityId("BtnVedi"));
+
+            Assert.That(bottonneVedi.Text, Is.EqualTo("VEDI SPESE"));
+
+            bottonneVedi.Click();
+            //System.Threading.Thread.Sleep(1000);
+        }
+
+            [TearDown]
         public void TearDown()
         {
             _driver?.Quit();

@@ -21,19 +21,21 @@
                    Placeholder="Descrizione spesa"
                    AutomationId="EntDescrizione"/>
 
-            <!--<Entry x:Name="EntImporto"
+            <Entry x:Name="EntImporto"
                    Placeholder="Importo"
                    AutomationId="EntImporto"/>
 
             <Button x:Name="BtnSalva"
                     Text="SALVA SPESA"
                     TextColor="White"
-                    BackgroundColor="Green"/>
+                    BackgroundColor="Green"
+                    AutomationId="BtnSalva"/>
 
             <Button x:Name="BtnVedi"
                     Text="VEDI SPESE"
                     TextColor="White"
-                    BackgroundColor="Blue"/>-->
+                    BackgroundColor="Blue"
+                    AutomationId="BtnVedi"/>
         </VerticalStackLayout>
     </ScrollView>
 
