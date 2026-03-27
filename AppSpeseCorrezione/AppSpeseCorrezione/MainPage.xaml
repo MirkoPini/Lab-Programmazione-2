@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSpeseCorrezione.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+
+            <Label x:Name="lblTitolo"
+                   Text="LE MIE SPESE"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1A3A6B"/>
+
+            <Entry x:Name="EntNomeLista"
+                   Placeholder="Nome lista(es: marzo)"
+                   AutomationId="EntNomeLista"/>
+
+            <Entry x:Name="EntDescrizione"
+                   Placeholder="Descrizione spesa"
+                   AutomationId="EntDescrizione"/>
+
+            <!--<Entry x:Name="EntImporto"
+                   Placeholder="Importo"
+                   AutomationId="EntImporto"/>
+
+            <Button x:Name="BtnSalva"
+                    Text="SALVA SPESA"
+                    TextColor="White"
+                    BackgroundColor="Green"/>
+
+            <Button x:Name="BtnVedi"
+                    Text="VEDI SPESE"
+                    TextColor="White"
+                    BackgroundColor="Blue"/>-->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
