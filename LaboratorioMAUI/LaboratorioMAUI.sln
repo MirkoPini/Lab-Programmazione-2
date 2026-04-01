@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAppiumTest", "HelloApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDiario", "AppDiario\AppDiario.csproj", "{994129DA-11A8-40C3-A014-3568F1FA3714}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloList", "HelloList\HelloList.csproj", "{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,12 @@ Global
 		{994129DA-11A8-40C3-A014-3568F1FA3714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{994129DA-11A8-40C3-A014-3568F1FA3714}.Release|Any CPU.Build.0 = Release|Any CPU
 		{994129DA-11A8-40C3-A014-3568F1FA3714}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{46B55C3A-5B13-498C-B9D6-6FB3A31CF88D} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{4CA29E73-D577-4D52-9DFE-450C65B2170C} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{994129DA-11A8-40C3-A014-3568F1FA3714} = {99554041-5454-41C5-8730-DD3F67A32A80}
+		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {38A3650F-A046-4C39-8B1F-3911AB3FC3CD}
