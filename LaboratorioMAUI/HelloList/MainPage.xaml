@@ -6,7 +6,8 @@
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
 
-            <Picker x:Name="pickFrutti"/>
+            <Picker x:Name="pickFrutti"
+                    ItemDisplayBinding="{Binding Nome}"/>
             
         </VerticalStackLayout>
     </ScrollView>
