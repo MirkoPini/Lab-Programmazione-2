@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloList", "HelloList\Hell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPizza", "AppPizza\AppPizza.csproj", "{3A408C85-F238-4F93-94AF-B23ECBEBFDC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEsempiProgetto", "AppEsempiProgetto\AppEsempiProgetto.csproj", "{50B11DA8-99AD-4131-8C9F-9F505A122AD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,12 @@ Global
 		{3A408C85-F238-4F93-94AF-B23ECBEBFDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A408C85-F238-4F93-94AF-B23ECBEBFDC1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A408C85-F238-4F93-94AF-B23ECBEBFDC1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +116,7 @@ Global
 		{994129DA-11A8-40C3-A014-3568F1FA3714} = {99554041-5454-41C5-8730-DD3F67A32A80}
 		{7E7AFC3D-3D20-465D-9D88-099FA7F8ACC5} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{3A408C85-F238-4F93-94AF-B23ECBEBFDC1} = {99554041-5454-41C5-8730-DD3F67A32A80}
+		{50B11DA8-99AD-4131-8C9F-9F505A122AD7} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {38A3650F-A046-4C39-8B1F-3911AB3FC3CD}
