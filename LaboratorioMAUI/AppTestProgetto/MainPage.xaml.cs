@@ -1,7 +1,7 @@
 ﻿using Android.Mtp;
 using Plugin.Maui.Calendar.Models;
 using static Android.Provider.CalendarContract;
-
+/*
 namespace AppTestProgetto
 {
     public partial class MainPage : ContentPage
@@ -45,4 +45,4 @@ namespace AppTestProgetto
     {
         public int MyProperty { get; set; }
     }
-}
+}*/

@@ -32,11 +32,21 @@ namespace AppPizza.Models
 			set { _ingredienti = value; }
 		}
 
-        public Pizza(string nome, double prezzo, string ingredienti)
+		private string _image;
+
+		public string Immagine
+		{
+			get { return _image; }
+			set { _image = value; }
+		}
+
+
+		public Pizza(string nome, double prezzo, string ingredienti, string immagine)
         {
             Nome = nome;
 			Prezzo = prezzo;
 			Ingredienti = ingredienti;
+			Immagine = immagine;
         }
 
         public override bool Equals(object? obj)
@@ -51,7 +61,7 @@ namespace AppPizza.Models
 
         public override string? ToString()
         {
-            return Nome + ";" + Prezzo + ";" + Ingredienti;
+            return Nome + ";" + Prezzo + ";" + Ingredienti + ";" + Immagine;
         }
     }
 }
