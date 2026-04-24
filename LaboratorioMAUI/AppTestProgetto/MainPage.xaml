@@ -9,7 +9,16 @@
             Padding="30,0"
             Spacing="25">
 
-            <cal:Calendar/>
+            <cal:Calendar Events="{Binding Events}" EventsScrollViewVisible="True" SelectedDayBackgroundColor="Red">
+                <cal:Calendar.EventTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}" FontSize="25" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description}"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </cal:Calendar.EventTemplate>
+            </cal:Calendar>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -1,11 +1,12 @@
-﻿using Android.Mtp;
-using Plugin.Maui.Calendar.Models;
-using static Android.Provider.CalendarContract;
-/*
+﻿using Plugin.Maui.Calendar.Models;
+
 namespace AppTestProgetto
 {
     public partial class MainPage : ContentPage
     {
+
+
+        public EventCollection Events { get; set; }
 
         public MainPage()
         {
@@ -15,34 +16,34 @@ namespace AppTestProgetto
             {
                 [DateTime.Now] = new List<EventModel>
                 {
-                    new() { Name = "Cool event1", Description = "This is Cool event1's description!" },
-                    new() { Name = "Cool event2", Description = "This is Cool event2's description!" }
+                    new EventModel { Name = "Cool event1", Description = "This is Cool event1's description!" },
+                    new EventModel { Name = "Cool event2", Description = "This is Cool event2's description!" }
                 },
-                            // 5 days from today
-                            [DateTime.Now.AddDays(5)] = new List<EventModel>
+                // 5 days from today
+                [DateTime.Now.AddDays(5)] = new List<EventModel>
                 {
-                    new() { Name = "Cool event3", Description = "This is Cool event3's description!" },
-                    new() { Name = "Cool event4", Description = "This is Cool event4's description!" }
+                    new EventModel { Name = "Cool event3", Description = "This is Cool event3's description!" },
+                    new EventModel { Name = "Cool event4", Description = "This is Cool event4's description!" }
                 },
-                            // 3 days ago
-                            [DateTime.Now.AddDays(-3)] = new List<EventModel>
+                // 3 days ago
+                [DateTime.Now.AddDays(-3)] = new List<EventModel>
                 {
-                    new() { Name = "Cool event5", Description = "This is Cool event5's description!" }
+                    new EventModel { Name = "Cool event5", Description = "This is Cool event5's description!" }
                 },
-                            // custom date
-                            [new DateTime(2024, 3, 16)] = new List<EventModel>
+                // custom date
+                [new DateTime(2024, 3, 16)] = new List<EventModel>
                 {
-                    new() { Name = "Cool event6", Description = "This is Cool event6's description!" }
+                    new EventModel { Name = "Cool event6", Description = "This is Cool event6's description!" }
                 }
             };
+
+            BindingContext = this;
         }
-
-        public EventCollection Event { get; set; }
-
     }
 
     internal class EventModel
     {
-        public int MyProperty { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
-}*/
+}
