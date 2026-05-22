@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cal="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar"
+             x:Class="AppAgenda.Eventi"
+             Title="">
+    
+    <VerticalStackLayout>
+
+        <cal:Calendar x:Name="Calendario" 
+                      Events="{Binding Events}" 
+                      EventsScrollViewVisible="True" 
+                      Padding="30"
+                      FirstDayOfWeek="Monday"
+                      OtherMonthDayColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray300}}"
+                      DeselectedDayTextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource White}}"
+                      SelectedDayTextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource White}}"
+                      WeekendTitleStyle="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource White}}">
+
+
+            <cal:Calendar.EventTemplate>
+
+                <DataTemplate>
+                    
+                    <Grid RowSpacing="20" ColumnSpacing="30" Padding="5">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Text="{Binding Nome}" 
+                            FontSize="35" 
+                            FontAttributes="Bold"/>
+                        
+                        
+                        <Label 
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Text="{Binding Descrizione}"
+                            FontSize="25"/>
+
+                        <Button x:Name="BtnRemoveEvent"
+                            Grid.Column="2"
+                            Grid.Row="0"
+                            Text="Remove"
+                            CommandParameter="{Binding .}"
+                            Clicked="BtnRemoveEventClicked" />
+
+                    </Grid>
+                    
+                </DataTemplate>
+                
+            </cal:Calendar.EventTemplate>
+            
+        </cal:Calendar>
+        
+        <HorizontalStackLayout HorizontalOptions="End" Padding="50">
+            
+            <Button x:Name="BtnAddEvent"
+                    Text="+"
+                    Clicked="BtnAddEventClicked"
+                    FontSize="30"
+                    WidthRequest="60"
+                    CornerRadius="50"/>
+            
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>

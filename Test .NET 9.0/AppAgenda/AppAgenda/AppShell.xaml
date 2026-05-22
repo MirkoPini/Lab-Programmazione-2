@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppAgenda.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppAgenda"
+    Shell.FlyoutBehavior="Disabled"
+    Title="AppAgenda">
+    
+    
+    <TabBar>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Eventi"
+        ContentTemplate="{DataTemplate local:Eventi}"
+        Route="Eventi" />
+    <ShellContent
+        Title="Valutazioni"
+        ContentTemplate="{DataTemplate local:Valutazioni}"
+        Route="Valutazioni" />
+    <ShellContent
+        Title="Impostazioni"
+        ContentTemplate="{DataTemplate local:Impostazioni}"
+        Route="Impostazioni" />
+    </TabBar>    
+    
+</Shell>

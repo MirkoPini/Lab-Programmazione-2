@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAgenda.AggiungiMateria"
+             Title="AggiungiMateria">
+    <VerticalStackLayout Spacing="20" Padding="50">
+
+        <Label x:Name="LblTitolo"
+           Text="Aggiungi una materia/valutazione!"
+           FontSize="40"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"/>
+
+        <Label 
+            x:Name="LblNomeMateria"
+            Text="Nome Materia"
+        />
+        <Entry 
+            x:Name="EntNomeMateria"
+            Placeholder="Inserisci il nome della materia..."/>
+        <Label 
+            x:Name="LblNota"
+            Text="Valutazione"
+        />
+        <Entry x:Name="EntNota"
+            Placeholder="Inserisci una nota numerica della materia..."/>
+        <Label 
+            x:Name="LblPonderazioneNota"
+            Text="Ponderazione nota"
+        />
+        <Entry 
+            x:Name="EntPonderazioneNota"
+            Placeholder="Inserisci una nota numerica della materia..."/>
+
+        <Button x:Name="BtnSave"
+            Text="SALVA"
+            Clicked="BtnSaveClicked"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>

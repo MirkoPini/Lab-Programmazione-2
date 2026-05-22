@@ -1,0 +1,142 @@
+##################################################
+# .NET / Visual Studio / MAUI
+##################################################
+
+# Build results
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+##################################################
+# .NET / NuGet
+##################################################
+
+# NuGet packages
+*.nupkg
+packages/
+**/packages/*
+!**/packages/build/
+
+# NuGet cache files
+*.nuget.props
+*.nuget.targets
+
+##################################################
+# MAUI / Xamarin specific
+##################################################
+
+# Build artifacts
+*.apk
+*.aab
+*.ap_
+*.ipa
+
+# Android
+*.keystore
+
+# iOS
+*.p12
+*.mobileprovision
+
+# Xamarin / MAUI debug
+*.mdb
+*.pdb
+
+##################################################
+# Logs & temp files
+##################################################
+
+*.log
+*.tmp
+*.temp
+
+##################################################
+# OS generated files
+##################################################
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon?
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+*~
+
+##################################################
+# IDE / Tooling cache
+##################################################
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# NCrunch
+_NCrunch_*
+nCrunchTemp_*
+
+# Benchmark
+BenchmarkDotNet.Artifacts/
+
+##################################################
+# Test results
+##################################################
+
+[Tt]est[Rr]esult*/
+*.trx
+
+##################################################
+# Publish / Output
+##################################################
+
+publish/
+*.publish.xml
+*.pubxml
+*.publishproj
+
+##################################################
+# Misc
+##################################################
+
+# Database
+*.mdf
+*.ldf
+
+# Certificates / sensitive
+*.pfx
+
+# Node (se usi frontend)
+node_modules/
+
+# Backup files
+*.bak
+*.backup
+*~

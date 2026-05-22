@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAgenda.Impostazioni"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Margin="10"
+            x:Name="VSLmainSettings">
+
+            <HorizontalStackLayout>
+
+                <Image
+                    x:Name="imgUsericon"
+                    Source="usericon_light.png"
+                    VerticalOptions="Center"/>
+
+                <Label 
+                    x:Name="LblBenvenuto"
+                    Text="Benvenuto"
+                    FontSize="36"
+                    VerticalOptions="Center"/>
+                
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout
+                Spacing="20"
+                Margin="10"
+                WidthRequest="500">
+                <Frame
+                    Style="{StaticResource frameSettings}"
+                    WidthRequest="500">
+                    <Grid
+                        RowDefinitions="*,*">
+
+                        <Label
+                            Text="Tema"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+
+                        <Picker
+                            x:Name="PickTheme"
+                            HorizontalOptions="End"
+                            WidthRequest="115"
+                            SelectedIndexChanged="PickTheme_SelectedIndexChanged"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    Style="{StaticResource frameSettings}"
+                    WidthRequest="500">
+                    <Grid
+                        RowDefinitions="*,*">
+
+                        <Label
+                            Text="Tema"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+
+                        <Picker
+                            x:Name="PickFirstOfWeek"
+                            HorizontalOptions="End"
+                            WidthRequest="115"
+                            SelectedIndexChanged="PickFirstOfWeek_SelectedIndexChanged"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    Style="{StaticResource frameSettings}"
+                    WidthRequest="500">
+                    <Grid
+                        RowDefinitions="*,*">
+
+                        <Label
+                            Text="Nome"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+
+                        <Entry
+                            x:Name="EntName"
+                            HorizontalOptions="End"
+                            WidthRequest="200"
+                            MaxLength="35"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    Style="{StaticResource frameSettings}"
+                    WidthRequest="500">
+                    <Grid
+                        RowDefinitions="*,*">
+
+                        <Label
+                            Text="Cognome"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+                        <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+                        <Entry
+                            x:Name="EntLastname"
+                            HorizontalOptions="End"
+                            WidthRequest="200"
+                            MaxLength="50"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    Style="{StaticResource frameSettings}"
+                    WidthRequest="500">
+                    <Grid
+                        RowDefinitions="*,*">
+
+                        <Label
+                            Text="Data di nascita"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+
+                        <DatePicker
+                            x:Name="DatePickBirth"
+                            HorizontalOptions="End"
+                            WidthRequest="200"
+                            TextColor="White"
+                            Format="dd-MM-yyyy"/>
+
+                    </Grid>
+                </Frame>
+                <HorizontalStackLayout
+                    Spacing="10"
+                    Margin="10"
+                    HorizontalOptions="End">
+
+                    <Button
+                        x:Name="BtnSalva"
+                        Text="Salva"
+                        Clicked="BtnSalva_Clicked"
+                        WidthRequest="80"/>
+
+                    <Button
+                        x:Name="BtnAnnulla"
+                        Text="Annulla"
+                        Clicked="BtnAnnulla_Clicked"
+                        WidthRequest="80"/>
+                
+                </HorizontalStackLayout>
+                
+            </VerticalStackLayout>
+            
+        </VerticalStackLayout>
+        
+    </ScrollView>
+</ContentPage>
